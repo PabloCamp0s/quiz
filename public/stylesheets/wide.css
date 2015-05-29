@@ -6,10 +6,16 @@ body {
     content: "Wide Layout";
 }
 
+header {
+    order: 1;
+    flex: 1 100%;
+}
+
 nav {
-    float: left;
     width: 15%;
-    height: 200px;
+
+    order: 2;
+    flex: 1 0;
 }
 
 nav span {
@@ -17,12 +23,14 @@ nav span {
 }
 
 section {
-    float: right;
     width: 80%;
-    height: 200px;
+
+    flex: 6 0;
+    order: 2;
 }
 
 footer {
-    clear: both;
     display: block;
+
+    order: 3;
 }

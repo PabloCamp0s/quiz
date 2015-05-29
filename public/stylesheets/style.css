@@ -10,6 +10,9 @@ body {
 #page-wrap {
     margin: 2% auto;
     color: white;
+
+    display: flex;
+    flex-flow: row wrap;
 }
 
 #page-wrap > .main {
@@ -26,8 +29,31 @@ section > div {
 header, nav, section, footer {
     background: #eee;
     text-align: center;
+
+    flex: 1 100%;
 }
 
 nav span {
     margin: 0 10px 0 0;
+}
+
+section > #author {
+}
+
+section #name {
+    padding: 5%;
+    font-size: xx-large;
+}
+
+section #photo {
+    margin-left: 5%;
+    height: 180px;
+}
+
+section #photo > img {
+    height: 100%;
+}
+
+section #video {
+    height: 180px;
 }
