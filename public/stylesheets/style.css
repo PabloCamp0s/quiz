@@ -13,6 +13,9 @@ body {
 
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: stretch;
 }
 
 #page-wrap > .main {
@@ -38,15 +41,21 @@ nav span {
 }
 
 section > #author {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
 }
 
 section #name {
     padding: 5%;
     font-size: xx-large;
+    align-self: center;
 }
 
 section #photo {
-    margin-left: 5%;
+    padding: 5%;
     height: 180px;
 }
 
@@ -55,5 +64,6 @@ section #photo > img {
 }
 
 section #video {
+    padding: 5%;
     height: 180px;
 }

@@ -7,14 +7,12 @@ body {
 }
 
 header {
-    order: 1;
     flex: 1 100%;
 }
 
 nav {
-    width: 15%;
+    width: 20%;
 
-    order: 2;
     flex: 1 0;
 }
 
@@ -26,11 +24,10 @@ section {
     width: 80%;
 
     flex: 6 0;
-    order: 2;
 }
 
 footer {
     display: block;
 
-    order: 3;
+    flex: 1 100%;
 }
