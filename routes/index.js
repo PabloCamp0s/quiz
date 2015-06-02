@@ -11,6 +11,10 @@ router.get(
   }
 );
 
+// Autoload de comandos con :quizId
+router.param( 'quizId' , quizes.load );
+
+// Definición de rutas de /quizes
 router.get( '/quizes' , quizes.index );
 router.get( '/quizes/:quizId(\\d+)' , quizes.show );
 router.get( '/quizes/:quizId(\\d+)/answer' , quizes.answer );
