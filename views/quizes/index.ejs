@@ -1,0 +1,12 @@
+<table>
+  <% quizes.forEach(
+  function ( quiz )
+  {
+  %>
+  <tr>
+    <td><a href="quizes/<%= quiz.id %>"><%= quiz.pregunta %></a></td>
+  </tr>
+  <%
+  }
+  ); %>
+</table>
