@@ -62,6 +62,7 @@ exports.answer = function ( req , res )
   );
 }
 
+// GET /quizes/new
 exports.new = function ( req , res )
 {
   var quiz = models.Quiz.build(
@@ -70,6 +71,7 @@ exports.new = function ( req , res )
   res.render( 'quizes/new' , { quiz : quiz , errors : [] } );
 }
 
+// POST /quizes
 exports.create = function ( req , res )
 {
   var quiz = models.Quiz.build( req.body.quiz );
@@ -103,6 +105,7 @@ exports.edit = function ( req , res )
   res.render( 'quizes/edit' , { quiz : quiz , errors : [] } );
 }
 
+// PUT /quizes/:quizId
 exports.update = function ( req , res )
 {
   req.quiz.pregunta = req.body.quiz.pregunta;
@@ -128,4 +131,20 @@ exports.update = function ( req , res )
       }
     }
   )
+}
+
+// DELETE /quizes/:quizId
+exports.destroy = function ( req , res )
+{
+  req.quiz.destroy().then(
+    function ()
+    {
+      res.redirect( '/quizes' );
+    }
+  ).catch(
+    function ( err )
+    {
+      next( err );
+    }
+  );
 }
