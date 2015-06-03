@@ -1,0 +1,25 @@
+<div>Edite la pregunta</div>
+
+<form id="f" method="post" action="/quizes/<%= quiz.id %>?_method=put">
+  <% include _form.ejs %>
+</form>
+
+<script type="application/javascript">
+  document.getElementById( 'f' ).addEventListener(
+    'submit' , function ()
+    {
+      var preg = document.getElementById( 'preg' );
+      preg.value = (
+        (
+          preg.value !== ''
+        ) ? preg.value : preg.placeholder
+      );
+      var resp = document.getElementById( 'resp' );
+      resp.value = (
+        (
+          resp.value !== ''
+        ) ? resp.value : resp.placeholder
+      );
+    }
+  );
+</script>
