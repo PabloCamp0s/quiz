@@ -1,0 +1,7 @@
+<div>Añadir comentario:</div>
+
+<form method="post" action="/quizes/<%= quizId %>/comments">
+  <label for="comment" class="rem">Comentario:</label>
+  <input type="text" id="comment" name="comment[texto]" value="" placeholder="Texto del comentario" />
+  <input type="submit" value="Enviar" />
+</form>
