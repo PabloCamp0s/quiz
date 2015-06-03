@@ -1,19 +1,23 @@
 body {
-    background: #333;
+  background : #333333;
 }
 
 #page-wrap:after {
-    content: "Smartphone Layout";
+  content : "Smartphone Layout";
 }
 
 h2 span, section h3 {
-    display: none;
+  display : none;
 }
 
 body {
-    font-size: xx-large;
+  font-size : xx-large;
 }
 
 footer, input {
-    font-size: large;
+  font-size : large;
+}
+
+.rem {
+  display : none;
 }

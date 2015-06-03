@@ -1,69 +1,74 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin  : 0;
+  padding : 0;
 }
 
 body {
-    font: 16px 'Georgia', serif;
+  font : 16px 'Georgia', serif;
 }
 
 #page-wrap {
-    margin: 2% auto;
-    color: white;
+  margin          : 2% auto;
+  color           : white;
 
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: stretch;
-    align-content: stretch;
+  display         : flex;
+  flex-flow       : row wrap;
+  justify-content : space-around;
+  align-items     : stretch;
+  align-content   : stretch;
 }
 
 #page-wrap > .main {
-    border: 1px solid #999;
-    padding: 1%;
-    margin-bottom: 1px;
-    color: black;
+  border        : 1px solid #999999;
+  padding       : 1%;
+  margin-bottom : 1px;
+  color         : black;
 }
 
 section > div {
-    padding: 20px;
+  padding : 20px;
 }
 
 header, nav, section, footer {
-    background: #eee;
-    text-align: center;
+  background : #eeeeee;
+  text-align : center;
 
-    flex: 1 100%;
+  flex       : 1 100%;
 }
 
 nav span {
-    margin: 0 10px 0 0;
+  margin : 0 10px 0 0;
 }
 
 section > #author {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: stretch;
+  display         : flex;
+  flex-flow       : row wrap;
+  justify-content : center;
+  align-items     : stretch;
+  align-content   : stretch;
 }
 
 section #name {
-    padding: 5%;
-    font-size: xx-large;
-    align-self: center;
+  padding    : 5%;
+  font-size  : xx-large;
+  align-self : center;
 }
 
 section #photo {
-    padding: 5%;
-    height: 180px;
+  padding : 5%;
+  height  : 180px;
 }
 
 section #photo > img {
-    height: 100%;
+  height : 100%;
 }
 
 section #video {
-    padding: 5%;
-    height: 180px;
+  padding : 5%;
+  height  : 180px;
+}
+
+#errors {
+  color     : #ff6611;
+  font-size : smaller;
 }

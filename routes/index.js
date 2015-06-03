@@ -7,7 +7,7 @@ var quizes = require( '../controllers/quiz_controller' );
 router.get(
   '/' , function ( req , res , next )
   {
-    res.render( 'index' , { title : 'Quiz' } );
+    res.render( 'index' , { title : 'Quiz' , errors : [] } );
   }
 );
 
@@ -24,7 +24,7 @@ router.post( '/quizes' , quizes.create );
 router.get(
   '/author' , function ( req , res , next )
   {
-    res.render( 'author' )
+    res.render( 'author' , { errors : [] } );
   }
 );
 
