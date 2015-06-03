@@ -18,6 +18,8 @@ router.param( 'quizId' , quizes.load );
 router.get( '/quizes' , quizes.index );
 router.get( '/quizes/:quizId(\\d+)' , quizes.show );
 router.get( '/quizes/:quizId(\\d+)/answer' , quizes.answer );
+router.get( '/quizes/new' , quizes.new );
+router.post( '/quizes' , quizes.create );
 
 router.get(
   '/author' , function ( req , res , next )
