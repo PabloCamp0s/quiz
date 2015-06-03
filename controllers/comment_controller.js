@@ -12,7 +12,7 @@ exports.create = function ( req , res )
   var comment = models.Comment.build(
     {
       texto : req.body.comment.texto ,
-      quizId : req.params.quizId
+      QuizId : req.params.quizId
     }
   );
 
@@ -26,7 +26,7 @@ exports.create = function ( req , res )
       else
       {
         // guarda en DB campo texto del comment
-        comment.save( { fields : [ 'texto' ] } ).then(
+        comment.save( { fields : [ 'texto' , 'QuizId' ] } ).then(
           function ()
           {
             // Redirección http (url relativo) a la lista de preguntas
