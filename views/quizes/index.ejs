@@ -1,0 +1,20 @@
+<table>
+  <% quizes.forEach(
+  function ( quiz )
+  {
+  %>
+  <tr>
+    <td><a href="quizes/<%= quiz.id %>"><%= quiz.pregunta %></a></td>
+  </tr>
+  <%
+  }
+  ); %>
+</table>
+
+<div>Buscar preguntas:</div>
+
+<form method="get" action="/quizes">
+  <label for="search" class="rem">Texto a buscar:</label>
+  <input type="text" id="search" name="search" value="" placeholder="Texto a buscar" />
+  <input type="submit" value="Enviar" />
+</form>
