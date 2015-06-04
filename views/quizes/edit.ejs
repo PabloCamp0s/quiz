@@ -5,20 +5,30 @@
 </form>
 
 <script type="application/javascript">
-  document.getElementById( 'f' ).addEventListener(
-    'submit' , function ()
+  $(
+    function ()
     {
-      var preg = document.getElementById( 'preg' );
-      preg.value = (
-        (
-          preg.value !== ''
-        ) ? preg.value : preg.placeholder
-      );
-      var resp = document.getElementById( 'resp' );
-      resp.value = (
-        (
-          resp.value !== ''
-        ) ? resp.value : resp.placeholder
+      $( 'select#tema' ).find( 'option[value="' + $( '#t' ).attr( 'value' ) + '"]' ).prop( 'selected' , true );
+      $( 'form#f' ).on(
+        'submit' , function ()
+        {
+          var preg = $( '#preg' );
+          preg.attr(
+            'value' , (
+              (
+                preg.attr( 'value' ) !== ''
+              ) ? preg.attr( 'value' ) : preg.attr( 'placeholder' )
+            )
+          );
+          var resp = $( '#resp' );
+          resp.attr(
+            'value' , (
+              (
+                resp.attr( 'value' ) !== ''
+              ) ? resp.attr( 'value' ) : resp.attr( 'placeholder' )
+            )
+          );
+        }
       );
     }
   );
