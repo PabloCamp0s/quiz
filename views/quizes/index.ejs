@@ -4,9 +4,30 @@
   {
   %>
   <tr>
-    <td><a href="quizes/<%= quiz.id %>"><%= quiz.pregunta %></a></td>
+    <td>
+      <a href="quizes/<%= quiz.id %>">
+        <%= quiz.pregunta %>
+      </a>
+    </td>
+    <td>
+      <a href="quizes/<%= quiz.id %>/edit">
+        <button>editar</button>
+      </a>
+    </td>
+    <td>
+      <form method="post" action="/quizes/<%= quiz.id %>?_method=delete">
+        <button type="submit" onclick="return confirm( 'Borrar: <%= quiz.pregunta %>' );">
+          borrar
+        </button>
+      </form>
+    </td>
   </tr>
   <%
   }
   ); %>
 </table>
+<p>
+  <a href="/quizes/new">
+    <button type="button">Crear pregunta</button>
+  </a>
+</p>
