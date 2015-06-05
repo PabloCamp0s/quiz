@@ -34,7 +34,8 @@ exports.index = function ( req , res )
         )
           ? [ "pregunta like ?" , '%' + req.query.search.replace( /%/g , '\\%' ).replace( /\s+/g , '%' ) + '%' ]
           : null
-      )
+      ) ,
+      order : [ 'pregunta' ]
     }
   ).then(
     function ( quizes )
