@@ -25,11 +25,11 @@ router.delete( '/login' , sessions.destroy );
 router.get( '/quizes' , quizes.index );
 router.get( '/quizes/:quizId(\\d+)' , quizes.show );
 router.get( '/quizes/:quizId(\\d+)/answer' , quizes.answer );
-router.get( '/quizes/new' , quizes.new );
-router.post( '/quizes' , quizes.create );
-router.get( '/quizes/:quizId(\\d+)/edit' , quizes.edit );
-router.put( '/quizes/:quizId(\\d+)' , quizes.update );
-router.delete( '/quizes/:quizId(\\d+)' , quizes.destroy );
+router.get( '/quizes/new' , sessions.loginRequired , quizes.new );
+router.post( '/quizes' , sessions.loginRequired , quizes.create );
+router.get( '/quizes/:quizId(\\d+)/edit' , sessions.loginRequired , quizes.edit );
+router.put( '/quizes/:quizId(\\d+)' , sessions.loginRequired , quizes.update );
+router.delete( '/quizes/:quizId(\\d+)' , sessions.loginRequired , quizes.destroy );
 
 router.get( '/quizes/:quizId(\\d+)/comments/new' , comments.new );
 router.post( '/quizes/:quizId(\\d+)/comments' , comments.create );
