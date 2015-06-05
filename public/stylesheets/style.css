@@ -72,3 +72,7 @@ section #video {
   color     : #ff6611;
   font-size : smaller;
 }
+
+.right {
+  float : right;
+}
