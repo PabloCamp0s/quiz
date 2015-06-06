@@ -16,12 +16,19 @@
 </p>
 
 <p>
-  <strong>Comentarios (<%= quiz.Comments.length %>):</strong>
+  <strong>Comentarios:</strong>
 </p>
 
 <% quiz.Comments.forEach(
 function ( comment )
 {
-%><p>- <%= comment.texto %></p><%
-}
-) %>
+if ( comment.publicado || session.user ) { %>
+<p>
+  - <%= comment.texto %>
+  <% if ( session.user && !comment.publicado ) { %>
+<form id="publish" method="post" action="/quizes/<%= quiz.id %>/comments/<%= comment.id %>?_method=put"></form>
+<a href="#" onclick="$( 'form#publish' ).submit()">Publicar</a>
+<% } %>
+</p>
+<% } %>
+<% } ) %>
