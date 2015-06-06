@@ -33,6 +33,7 @@ router.delete( '/quizes/:quizId(\\d+)' , sessions.loginRequired , quizes.destroy
 
 router.get( '/quizes/:quizId(\\d+)/comments/new' , comments.new );
 router.post( '/quizes/:quizId(\\d+)/comments' , comments.create );
+router.put( '/quizes/:quizId(\\d+)/comments/:commentId(\\d+)' , sessions.loginRequired , comments.publish );
 
 router.get(
   '/author' , function ( req , res , next )
