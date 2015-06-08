@@ -26,8 +26,10 @@ if ( comment.publicado || session.user ) { %>
 <p>
   - <%= comment.texto %>
   <% if ( session.user && !comment.publicado ) { %>
-<form id="publish" method="post" action="/quizes/<%= quiz.id %>/comments/<%= comment.id %>?_method=put"></form>
-<a href="#" onclick="$( 'form#publish' ).submit()">Publicar</a>
+<form method="post" action="/quizes/<%= quiz.id %>/comments/<%= comment.id %>?_method=put">
+  <input type="hidden" name="publicado" value="true"/>
+  <input type="submit" value="Publicar"/>
+</form>
 <% } %>
 </p>
 <% } %>

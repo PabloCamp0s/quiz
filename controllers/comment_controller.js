@@ -62,9 +62,9 @@ exports.create = function ( req , res )
 }
 
 // PUT /quizes/:quizId/comments/:commentId
-exports.publish = function ( req , res )
+exports.edit = function ( req , res )
 {
-  req.comment.publicado = true;
+  req.comment.publicado = ( req.body.publicado === 'true' ) ;
   req.comment.save( { fields : [ 'publicado' ] } ).then(
     function ()
     {
