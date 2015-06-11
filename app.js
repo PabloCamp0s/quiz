@@ -43,6 +43,22 @@ app.use(
     next();
   }
 );
+app.use(
+  function ( req , res , next )
+  {
+    var now = new Date();
+    if ( req.session.stamp )
+    {
+      var before = Date.parse( req.session.stamp );
+      if ( ( !isNaN( before ) ) && ( ( now - before ) > 120000 ) )
+      {
+        delete req.session.user;
+      }
+    }
+    req.session.stamp = now.toJSON();
+    next();
+  }
+);
 
 app.use( '/' , routes );
 
