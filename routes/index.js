@@ -4,6 +4,7 @@ var router = express.Router();
 var quizes = require( '../controllers/quiz_controller' );
 var comments = require( '../controllers/comment_controller' );
 var sessions = require( '../controllers/session_controller' );
+var statistics = require( '../controllers/statistic_controller' );
 
 /* GET home page. */
 router.get(
@@ -34,6 +35,8 @@ router.delete( '/quizes/:quizId(\\d+)' , sessions.loginRequired , quizes.destroy
 router.get( '/quizes/:quizId(\\d+)/comments/new' , comments.new );
 router.post( '/quizes/:quizId(\\d+)/comments' , comments.create );
 router.put( '/quizes/:quizId(\\d+)/comments/:commentId(\\d+)' , sessions.loginRequired , comments.edit );
+
+router.get( '/quizes/statistics' , statistics.show );
 
 router.get(
   '/author' , function ( req , res , next )
