@@ -3,28 +3,31 @@ var models = require( '../models/models.js' );
 // GET /quizes/statistics
 exports.show = function ( req , res )
 {
-  models.Quiz.count().then(
-    function ( totalQuizes )
+  var totalQuizzes = 0 , totalComments = 0 , quizzesWithComments = 0;
+  models.Quiz.findAll( { include : [ { model : models.Comment } ] } ).then(
+    function ( quizzes )
     {
-      models.Comment.count( { where : { publicado : true } } ).then(
-        function ( totalComments )
+      quizzes.forEach(
+        function ( quiz )
         {
-          // ToDo pendiente de realizar
-          models.Quiz.findAll( { include : [ { model : models.Comment } ] } ).then(
-            function ( c )
-            {
-              res.render(
-                'statistics/show' ,
-                {
-                  totalQuizes : totalQuizes ,
-                  totalComments : totalComments ,
-                  averageComments : totalComments / totalQuizes ,
-                  c : c ,
-                  errors : []
-                }
-              );
-            }
+          totalQuizzes++;
+          totalComments += quiz.Comments.length;
+          quizzesWithComments += (
+            (
+              quiz.Comments.length > 0
+            ) ? 1 : 0
           );
+        }
+      );
+      res.render(
+        'statistics/show' ,
+        {
+          totalQuizzes : totalQuizzes ,
+          totalComments : totalComments ,
+          averageComments : totalComments / totalQuizzes ,
+          quizzesWithComments : quizzesWithComments ,
+          quizzesWithoutComments : totalQuizzes - quizzesWithComments ,
+          errors : []
         }
       );
     }
